@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="sticker">
+  <title>康軒國語一上第三課《一秋千》字音字形互動小教室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Sticker style) */
+      --background: #fef7ff;
+      --surface-container-low: #ffffff;
+      --surface-container: #f8eef8;
+      --surface-container-high: #f2e8f2;
+
+      /* Ink */
+      --on-surface: #2e1a28;
+      --on-surface-variant: #604868;
+
+      /* Rules */
+      --outline: #907898;
+      --outline-variant: #dcc8e0;
+
+      /* Accents */
+      --primary: #c2207f;
+      --on-primary: #ffffff;
+      --primary-container: #f080c0;
+      --on-primary-container: #2e1a28;
+      --secondary: #7c52aa;
+      --on-secondary: #ffffff;
+      --secondary-soft: #ede4f7;
+      --tertiary: #0096cc;
+      --tertiary-soft: #dff4fc;
+      --error: #c53030;
+      --on-error: #ffffff;
+      --error-soft: #fde8e8;
+
+      /* Data series */
+      --data-1: #c2207f;
+      --data-2: #7c52aa;
+      --data-3: #0096cc;
+      --data-4: #d96a00;
+      --data-context: #c8b8d0;
+
+      /* Fonts */
+      --font-headline: 'Noto Sans TC', 'DM Sans', sans-serif;
+      --font-body: 'Noto Sans TC', 'DM Sans', sans-serif;
+      --font-label: 'Noto Sans TC', 'DM Sans', sans-serif;
+
+      /* Shape */
+      --rounded: 1rem;
+      --rounded-lg: 2rem;
+      --rounded-full: 9999px;
+
+      /* Style effects */
+      --shadow-pink: 0 4px 16px rgb(224 64 160 / 0.2);
+      --shadow-pink-deep: 0 10px 28px rgb(224 64 160 / 0.32);
+      --shadow-grape: 0 4px 16px rgb(124 82 170 / 0.2);
+      --shadow-grape-deep: 0 10px 26px rgb(124 82 170 / 0.3);
+      --shadow-sky: 0 4px 16px rgb(0 150 204 / 0.2);
+      --shadow-sky-deep: 0 10px 26px rgb(0 150 204 / 0.28);
+      --tint-pink: rgb(194 32 127 / 0.18);
+      --tint-sky: rgb(0 150 204 / 0.18);
+      --pop-scale: scale(1.03);
+      --lift: translateY(-4px);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      /* Shared tokens */
+      --positive: #15803d;
+      --positive-soft: #dcfce7;
+      --on-positive: #ffffff;
+      --warning: #b45309;
+      --warning-soft: #fef3c7;
+      --focus: var(--primary);
+
+      /* Type scale (Narrative) */
+      --display-size: clamp(2.15rem, 1.4rem + 2.8vw, 3.35rem);
+      --headline-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.2rem);
+      --subhead-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+      --body-size: clamp(1.03rem, 1rem + 0.2vw, 1.15rem);
+      --label-size: clamp(0.78rem, 0.74rem + 0.12vw, 0.875rem);
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.65;
+      scroll-behavior: smooth;
+    }
+    header { position: static !important; }
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-2xl);
+      padding: var(--space-lg);
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Typography helpers */
+    .display {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: var(--display-size);
+      line-height: 1.15;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .display em, .section-title em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .section-title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: var(--headline-size);
+      line-height: 1.25;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .section-lede {
+      color: var(--on-surface-variant);
+      max-width: 65ch;
+      margin: var(--space-sm) 0 0 0;
+    }
+    .kicker-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--secondary);
+      background-color: var(--secondary-soft);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* Cards & Surfaces */
+    .card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-lg);
+    }
+    .card-sky { box-shadow: var(--shadow-sky); }
+    .card-grape { box-shadow: var(--shadow-grape); }
+
+    /* Hero panel */
+    .hero-panel {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink-deep);
+      padding: var(--space-xl);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-md);
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      border-radius: var(--rounded-full);
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--label-size);
+      font-weight: 700;
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+    .pill-badge-grape {
+      background-color: var(--secondary-soft);
+      color: var(--secondary);
+    }
+    .hero-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+
+    /* Buttons & Chips */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded-full);
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  box-shadow var(--dur-short) var(--ease-out),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+    .btn:hover { transform: var(--pop-scale); }
+    .btn:active { transform: scale(0.97); }
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+    .btn-primary:hover { box-shadow: var(--shadow-pink-deep); }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--on-secondary);
+      box-shadow: var(--shadow-grape);
+    }
+    .btn-secondary:hover { box-shadow: var(--shadow-grape-deep); }
+
+    .btn-soft {
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+      box-shadow: var(--shadow-sky);
+    }
+    .btn-soft:hover {
+      background-color: var(--surface-container-high);
+      box-shadow: var(--shadow-sky-deep);
+    }
+
+    .btn-quiet {
+      background-color: transparent;
+      color: var(--primary);
+      padding: var(--space-sm) var(--space-md);
+      min-height: 44px;
+    }
+    .btn-quiet:hover {
+      background-color: var(--surface-container);
+    }
+
+    /* Progress Stats Card in Hero */
+    .progress-dashboard {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-sm);
+    }
+    .stat-pill {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md) var(--space-sm);
+      text-align: center;
+      box-shadow: var(--shadow-grape);
+    }
+    .stat-pill:nth-child(1) { box-shadow: var(--shadow-pink); }
+    .stat-pill:nth-child(2) { box-shadow: var(--shadow-sky); }
+    .stat-label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      display: block;
+    }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      color: var(--primary);
+      display: block;
+      margin-top: var(--space-xs);
+    }
+    .stat-pill:nth-child(2) .stat-value { color: var(--secondary); }
+    .stat-pill:nth-child(3) .stat-value { color: var(--on-surface); }
+
+    .lollipop-track {
+      width: 100%;
+      height: 16px;
+      background-color: var(--surface-container-high);
+      border-radius: var(--rounded-full);
+      overflow: hidden;
+      padding: 3px;
+    }
+    .lollipop-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--tertiary);
+      border-radius: var(--rounded-full);
+      transition: width var(--dur-long) var(--ease-bounce);
+    }
+
+    .progress-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+
+    /* Section Header */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Section 1: Homographs / Near-shape Explorer */
+    .homograph-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .group-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .group-chip {
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      box-shadow: var(--shadow-sky);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out),
+                  box-shadow var(--dur-short) var(--ease-out);
+    }
+    .group-chip:hover {
+      transform: var(--pop-scale);
+      box-shadow: var(--shadow-sky-deep);
+    }
+    .group-chip.is-active {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-pink-deep);
+    }
+    .chip-done-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: var(--rounded-full);
+      background-color: var(--tertiary);
+      display: inline-block;
+    }
+    .group-chip.is-active .chip-done-dot {
+      background-color: var(--primary-container);
+    }
+
+    /* Spotlight comparison panel */
+    .spotlight-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .spotlight-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .spotlight-hint-pill {
+      background-color: var(--tertiary-soft);
+      color: var(--on-surface);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-weight: 700;
+      font-size: var(--label-size);
+    }
+
+    .char-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+    .char-card {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      box-shadow: var(--shadow-grape);
+    }
+    .char-card:nth-child(3n+1) { box-shadow: var(--shadow-pink); }
+    .char-card:nth-child(3n+2) { box-shadow: var(--shadow-sky); }
+
+    .char-visual-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .hanzi-tile {
+      width: 96px;
+      height: 96px;
+      flex-shrink: 0;
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-pink);
+      position: relative;
+    }
+    .hanzi-svg {
+      width: 84px;
+      height: 84px;
+      display: block;
+    }
+    .char-meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .char-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+    }
+    .char-big-txt {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--on-surface);
+    }
+    .zhuyin-tag {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      font-weight: 700;
+      font-size: var(--label-size);
+      padding: 2px var(--space-sm);
+      border-radius: var(--rounded-full);
+    }
+    .radical-tag {
+      font-size: var(--label-size);
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .diff-callout {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      font-size: 0.95rem;
+      color: var(--on-surface);
+    }
+    .diff-callout strong {
+      color: var(--primary);
+    }
+
+    .word-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .word-btn {
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+    .word-btn:hover {
+      transform: var(--pop-scale);
+      background-color: var(--primary-container);
+    }
+    .word-zhuyin {
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    /* Quick eye check inside Section 1 */
+    .mini-check-bar {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .mini-check-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .mini-feedback {
+      width: 100%;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      display: none;
+    }
+    .mini-feedback.is-shown { display: inline-block; }
+    .mini-feedback.is-ok {
+      background-color: var(--positive-soft);
+      color: var(--positive);
+    }
+    .mini-feedback.is-bad {
+      background-color: var(--error-soft);
+      color: var(--error);
+    }
+
+    /* Overview Grid of all 5 groups */
+    .all-groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .summary-mini-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-pink);
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-align: left;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  box-shadow var(--dur-short) var(--ease-out);
+    }
+    .summary-mini-card:nth-child(3n+2) { box-shadow: var(--shadow-sky); }
+    .summary-mini-card:nth-child(3n+3) { box-shadow: var(--shadow-grape); }
+    .summary-mini-card:hover { transform: var(--lift); }
+    .summary-mini-card.is-selected {
+      background-color: var(--surface-container);
+      outline: 3px solid var(--primary);
+    }
+    .summary-chars {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+      display: block;
+    }
+    .summary-words {
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-xs);
+      display: block;
+    }
+
+    /* Section 2: Polyphones */
+    .poly-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .poly-main-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-grape);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .poly-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .poly-char-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .poly-big-char {
+      width: 68px;
+      height: 68px;
+      border-radius: var(--rounded);
+      background-color: var(--primary);
+      color: var(--on-primary);
+      font-size: 2.25rem;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-pink);
+    }
+    .reading-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .reading-pill {
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+    .reading-pill:hover { transform: var(--pop-scale); }
+    .reading-pill.is-active {
+      background-color: var(--secondary);
+      color: var(--on-secondary);
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-grape);
+    }
+
+    .reading-detail-box {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .reading-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+    .reading-zhuyin-large {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .reading-role-tag {
+      background-color: var(--surface-container-low);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: var(--label-size);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+    }
+    .sentence-box {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-sky);
+    }
+    .sentence-box em {
+      font-style: normal;
+      font-weight: 900;
+      color: var(--primary);
+      background-color: var(--surface-container);
+      padding: 0 var(--space-xs);
+      border-radius: var(--rounded-full);
+    }
+
+    /* All 5 readings visual reference list for 和 */
+    .poly-all-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--rounded);
+      overflow: hidden;
+    }
+    .poly-all-table th {
+      background-color: var(--surface-container);
+      color: var(--on-surface-variant);
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-align: left;
+      padding: var(--space-sm) var(--space-md);
+    }
+    .poly-all-table td {
+      padding: var(--space-sm) var(--space-md);
+      font-size: 0.95rem;
+    }
+    .poly-all-table tbody tr:nth-child(even) {
+      background-color: var(--surface-container);
+    }
+    .poly-all-table tbody tr.is-highlighted {
+      background-color: var(--primary-container);
+      font-weight: 700;
+    }
+
+    /* Side column for 大 and 們 */
+    .poly-side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .poly-mini-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-sky);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .poly-mini-card:nth-child(2) { box-shadow: var(--shadow-pink); }
+    .poly-mini-head {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .poly-small-char {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--rounded);
+      background-color: var(--secondary);
+      color: var(--on-secondary);
+      font-size: 1.75rem;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .poly-mini-card:nth-child(2) .poly-small-char {
+      background-color: var(--primary);
+    }
+    .poly-pair-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .poly-pair-item {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      cursor: pointer;
+      border: none;
+      text-align: left;
+      width: 100%;
+      min-height: 44px;
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+    .poly-pair-item:hover {
+      transform: var(--pop-scale);
+      background-color: var(--surface-container-high);
+    }
+    .poly-pair-item.is-visited {
+      background-color: var(--positive-soft);
+    }
+
+    /* Section 2.5: Interactive Phrase Matching Game */
+    .matcher-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-sky);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .matcher-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .matcher-col {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .matcher-col-title {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--space-xs);
+    }
+    .match-tile {
+      min-height: 48px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out);
+    }
+    .match-tile:hover:not(:disabled) { transform: var(--pop-scale); }
+    .match-tile.is-selected {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-pink);
+    }
+    .match-tile.is-matched {
+      background-color: var(--positive-soft);
+      color: var(--positive);
+      border-color: var(--positive);
+      cursor: default;
+    }
+    .match-tile.is-wrong {
+      background-color: var(--error-soft);
+      color: var(--error);
+      border-color: var(--error);
+    }
+
+    /* Section 3: Classroom Quiz */
+    .quiz-shell {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink-deep);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .quiz-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .segmented-filter {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      background-color: var(--surface-container-high);
+      padding: var(--space-xs);
+      border-radius: var(--rounded-full);
+    }
+    .seg-btn {
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      border: none;
+      background-color: transparent;
+      color: var(--on-surface-variant);
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out),
+                  color var(--dur-micro) var(--ease-out);
+    }
+    .seg-btn.is-active {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .quiz-progress-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .quiz-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .question-stage {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .q-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+    .q-type-tag {
+      background-color: var(--secondary);
+      color: var(--on-secondary);
+      font-size: var(--label-size);
+      font-weight: 700;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+    }
+    .q-prompt {
+      font-size: var(--subhead-size);
+      font-weight: 800;
+      color: var(--on-surface);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .q-blank {
+      display: inline-block;
+      min-width: 2.2em;
+      text-align: center;
+      background-color: var(--surface-container-low);
+      color: var(--primary);
+      border-radius: var(--rounded-full);
+      padding: 0 var(--space-sm);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .option-btn {
+      min-height: 54px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      font-size: 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      box-shadow: var(--shadow-sky);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out),
+                  box-shadow var(--dur-short) var(--ease-out);
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: var(--pop-scale);
+      box-shadow: var(--shadow-sky-deep);
+    }
+    .option-btn:disabled { cursor: default; }
+    .option-btn.is-correct {
+      background-color: var(--positive);
+      color: var(--on-positive);
+      border-color: var(--positive);
+      box-shadow: var(--shadow-sky);
+    }
+    .option-btn.is-wrong {
+      background-color: var(--error);
+      color: var(--on-error);
+      border-color: var(--error);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .q-feedback-banner {
+      border-radius: var(--rounded);
+      padding: var(--space-md) var(--space-lg);
+      display: none;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .q-feedback-banner.is-shown { display: flex; }
+    .q-feedback-banner.is-ok {
+      background-color: var(--positive-soft);
+      color: var(--positive);
+    }
+    .q-feedback-banner.is-bad {
+      background-color: var(--error-soft);
+      color: var(--error);
+    }
+
+    .quiz-nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .q-dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+    .q-dot {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--outline-variant);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface-variant);
+      font-size: var(--label-size);
+      font-weight: 800;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-variant-numeric: tabular-nums;
+      transition: transform var(--dur-short) var(--ease-bounce);
+    }
+    .q-dot:hover { transform: var(--pop-scale); }
+    .q-dot.is-current {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+      color: var(--primary);
+    }
+    .q-dot.is-ok {
+      background-color: var(--positive);
+      border-color: var(--positive);
+      color: var(--on-positive);
+    }
+    .q-dot.is-bad {
+      background-color: var(--error);
+      border-color: var(--error);
+      color: var(--on-error);
+    }
+
+    /* Quiz Result Summary */
+    .quiz-result-panel {
+      background-color: var(--surface-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      display: none;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .quiz-result-panel.is-shown { display: flex; }
+    .result-score-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+    }
+    .result-big-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .wrong-review-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .wrong-review-item {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-pink);
+    }
+
+    /* Footer source attribution */
+    .site-footer {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg) var(--space-xl);
+      box-shadow: var(--shadow-grape);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+
+    /* Status toast inline */
+    .inline-status {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--secondary);
+      min-height: 1.2em;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 860px) {
+      .hero-panel { grid-template-columns: minmax(0, 1fr); }
+      .poly-showcase { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .page-grid {
+        padding: var(--space-md);
+        gap: var(--space-xl);
+      }
+      .hero-panel, .spotlight-card, .poly-main-card, .matcher-card, .quiz-shell {
+        padding: var(--space-lg);
+      }
+      .stat-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .matcher-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .q-dot {
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-grid">
+    <!-- Hero Header -->
+    <header class="hero-panel">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <span class="pill-badge">康軒版國小國語 一上</span>
+          <span class="pill-badge pill-badge-grape">第三課字音字形複習</span>
+        </div>
+        <h1 class="display">第三課《一<em>秋千</em>》字音字形小教室</h1>
+        <p class="section-lede">
+          把長得像的字分清楚、把同一個字的不同聲音唸對！這裡整理了本課 5 組形近字、3 個常考多音字（特別是「和」的 5 種讀法），還有隨堂小測驗幫你自我檢查。
+        </p>
+        <nav class="hero-nav" aria-label="學習單元快速跳轉">
+          <a href="#sec-homographs" class="btn btn-primary">
+            <i data-lucide="search" aria-hidden="true"></i>
+            形近字辨析
+          </a>
+          <a href="#sec-polyphones" class="btn btn-secondary">
+            <i data-lucide="volume-2" aria-hidden="true"></i>
+            多音字百寶箱
+          </a>
+          <a href="#sec-quiz" class="btn btn-soft">
+            <i data-lucide="sparkles" aria-hidden="true"></i>
+            隨堂互動測驗
+          </a>
+        </nav>
+      </div>
+
+      <aside class="progress-dashboard" aria-label="個人學習進度">
+        <div class="stat-row">
+          <div class="stat-pill">
+            <span class="stat-label">形近字複習</span>
+            <span class="stat-value" id="stat-homographs">0 / 5</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">多音字探索</span>
+            <span class="stat-value" id="stat-polyphones">0 / 9</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">測驗最佳分</span>
+            <span class="stat-value" id="stat-best-score">--</span>
+          </div>
+        </div>
+        <div>
+          <div class="quiz-progress-meta">
+            <span>本課整體探索進度</span>
+            <span id="overall-progress-label">0%</span>
+          </div>
+          <div class="lollipop-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-progressbar">
+            <div class="lollipop-fill" id="overall-progress-fill"></div>
+          </div>
+        </div>
+        <div class="progress-footer">
+          <span id="speech-status-hint">點擊語詞按鈕可聽字音示範</span>
+          <button type="button" class="btn btn-quiet" id="btn-reset-progress" onclick="handleResetProgress(this)">
+            清除學習紀錄
+          </button>
+        </div>
+      </aside>
+    </header>
+
+    <!-- Section 1: 形近字辨析 -->
+    <section id="sec-homographs" class="section-block" aria-labelledby="heading-homographs">
+      <div class="section-header">
+        <span class="kicker-label">第一關：火眼金睛看筆畫</span>
+        <h2 id="heading-homographs" class="section-title">5 組<em>形近字</em>仔細比一比</h2>
+        <p class="section-lede">
+          先選一組你想認識的字，觀察圖片裡的粉紅色標記，找出兩個字哪裡不一樣，再點點看下方的語詞複習讀音。
+        </p>
+      </div>
+
+      <div class="homograph-layout">
+        <!-- Selector chips -->
+        <div class="group-selector" id="homograph-tabs" role="group" aria-label="選擇形近字組別"></div>
+
+        <!-- Spotlight detail card -->
+        <div class="spotlight-card" id="homograph-spotlight">
+          <div class="spotlight-top">
+            <div>
+              <h3 class="section-title" id="spot-title" style="font-size: var(--subhead-size);">第 1 組：千 / 干</h3>
+            </div>
+            <span class="spotlight-hint-pill" id="spot-rule-pill">關鍵口訣：頂端一撇 vs 平頭一橫</span>
+          </div>
+
+          <div class="char-compare-grid" id="spot-char-cards"></div>
+
+          <!-- Mini eye check -->
+          <div class="mini-check-bar" id="spot-mini-check">
+            <div>
+              <strong id="mini-check-prompt">小試身手：請選出正確的字填入句子！</strong>
+            </div>
+            <div class="mini-check-options" id="mini-check-options"></div>
+            <div class="mini-feedback" id="mini-check-feedback" role="status"></div>
+          </div>
+        </div>
+
+        <!-- Quick overview cards for all 5 groups -->
+        <div class="all-groups-grid" id="all-groups-overview" aria-label="五組形近字總覽卡片"></div>
+      </div>
+    </section>
+
+    <!-- Section 2: 多音字與常用字詞說明 -->
+    <section id="sec-polyphones" class="section-block" aria-labelledby="heading-polyphones">
+      <div class="section-header">
+        <span class="kicker-label">第二關：一字多音大發現</span>
+        <h2 id="heading-polyphones" class="section-title">「<em>和</em>」、「大」、「們」怎麼唸才對？</h2>
+        <p class="section-lede">
+          同一個字在不同語詞裡會有不同的讀音！「和」在本課有 5 種常見讀法，「大」和「們」也各有 2 種讀法，點選讀音按鈕看看它們怎麼用。
+        </p>
+      </div>
+
+      <div class="poly-showcase">
+        <!-- Main explorer for 和 -->
+        <div class="poly-main-card">
+          <div class="poly-header-row">
+            <div class="poly-char-badge">
+              <div class="poly-big-char" aria-hidden="true">和</div>
+              <div>
+                <h3 style="margin:0; font-size: var(--subhead-size); font-weight: 800;">「和」的 5 種讀音魔法</h3>
+                <p style="margin:0; color: var(--on-surface-variant); font-size: 0.95rem;">點選下面每一個注音，看語詞與造句示範</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reading-pills" id="he-reading-pills" role="group" aria-label="選擇「和」的讀音"></div>
+
+          <div class="reading-detail-box" id="he-detail-box">
+            <div class="reading-head">
+              <div style="display:flex; align-items:center; gap: var(--space-sm);">
+                <span class="reading-zhuyin-large" id="he-zhuyin">ㄏㄜˊ</span>
+                <button type="button" class="btn btn-soft" id="he-speak-btn" onclick="speakCurrentHe()" style="min-height:44px; padding: var(--space-xs) var(--space-md);">
+                  <i data-lucide="volume-2" aria-hidden="true"></i>
+                  唸唸看
+                </button>
+              </div>
+              <span class="reading-role-tag" id="he-role">意思：平靜、融洽</span>
+            </div>
+            <p id="he-meaning" style="margin:0;"></p>
+            <div class="word-chips" id="he-words"></div>
+            <div class="sentence-box" id="he-sentence"></div>
+          </div>
+
+          <!-- Full reference table for 和 -->
+          <div>
+            <table class="poly-all-table" aria-label="「和」五種讀音總整理表">
+              <thead>
+                <tr>
+                  <th scope="col">讀音</th>
+                  <th scope="col">課本常見語詞</th>
+                  <th scope="col">記憶小提示</th>
+                </tr>
+              </thead>
+              <tbody id="he-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Side cards for 大 and 們 -->
+        <div class="poly-side-stack">
+          <div class="poly-mini-card">
+            <div class="poly-mini-head">
+              <div class="poly-small-char" aria-hidden="true">大</div>
+              <div>
+                <h3 style="margin:0; font-size: 1.15rem; font-weight: 800;">「大」的 2 種讀音</h3>
+                <p style="margin:0; font-size: 0.9rem; color: var(--on-surface-variant);">平常念 ㄉㄚˋ，遇到醫生念 ㄉㄞˋ</p>
+              </div>
+            </div>
+            <div class="poly-pair-list" id="da-pair-list"></div>
+          </div>
+
+          <div class="poly-mini-card">
+            <div class="poly-mini-head">
+              <div class="poly-small-char" aria-hidden="true">們</div>
+              <div>
+                <h3 style="margin:0; font-size: 1.15rem; font-weight: 800;">「們」的 2 種讀音</h3>
+                <p style="margin:0; font-size: 0.9rem; color: var(--on-surface-variant);">稱呼大家念輕聲 ˙ㄇㄣ，地名念 ㄇㄣˊ</p>
+              </div>
+            </div>
+            <div class="poly-pair-list" id="men-pair-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Phrase-to-Reading Matcher -->
+      <div class="matcher-card">
+        <div class="spotlight-top">
+          <div>
+            <h3 style="margin:0; font-size: var(--subhead-size); font-weight: 800;">暖身小遊戲：多音字語詞配對</h3>
+            <p style="margin: var(--space-xs) 0 0 0; color: var(--on-surface-variant); font-size: 0.95rem;">
+              先點選左邊的一個語詞，再點選右邊正確的讀音，把 6 組全部配對成功！
+            </p>
+          </div>
+          <button type="button" class="btn btn-soft" onclick="resetMatcher()">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            重新洗牌
+          </button>
+        </div>
+
+        <div class="matcher-grid">
+          <div class="matcher-col">
+            <span class="matcher-col-title">1. 先點語詞</span>
+            <div id="matcher-words" style="display:flex; flex-direction:column; gap: var(--space-sm);"></div>
+          </div>
+          <div class="matcher-col">
+            <span class="matcher-col-title">2. 再點對應讀音</span>
+            <div id="matcher-readings" style="display:flex; flex-direction:column; gap: var(--space-sm);"></div>
+          </div>
+        </div>
+        <div class="inline-status" id="matcher-status" role="status">請先從左邊選一個語詞開始配對。</div>
+      </div>
+    </section>
+
+    <!-- Section 3: 隨堂互動測驗 -->
+    <section id="sec-quiz" class="section-block" aria-labelledby="heading-quiz">
+      <div class="section-header">
+        <span class="kicker-label">第三關：實力大驗收</span>
+        <h2 id="heading-quiz" class="section-title">第三課<em>隨堂互動測驗</em></h2>
+        <p class="section-lede">
+          共 12 題（包含形近字選字與多音字辨音）。每答完一題都會立刻告訴你為什麼對或錯，也可以隨時切換只練形近字或多音字！
+        </p>
+      </div>
+
+      <div class="quiz-shell">
+        <div class="quiz-toolbar">
+          <div class="segmented-filter" role="group" aria-label="選擇測驗題型範圍">
+            <button type="button" class="seg-btn is-active" id="filter-all" onclick="setQuizFilter('all')">全部 12 題</button>
+            <button type="button" class="seg-btn" id="filter-shape" onclick="setQuizFilter('shape')">形近字（8 題）</button>
+            <button type="button" class="seg-btn" id="filter-sound" onclick="setQuizFilter('sound')">多音字（4 題）</button>
+          </div>
+          <button type="button" class="btn btn-soft" id="btn-reset-quiz" onclick="handleResetQuiz(this)">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <span id="reset-quiz-label">重做本輪測驗</span>
+          </button>
+        </div>
+
+        <div class="quiz-progress-wrap">
+          <div class="quiz-progress-meta">
+            <span id="quiz-progress-text">第 1 題 / 共 12 題</span>
+            <span id="quiz-score-live">目前答對：0 題</span>
+          </div>
+          <div class="lollipop-track">
+            <div class="lollipop-fill" id="quiz-progress-fill" style="background-color: var(--primary);"></div>
+          </div>
+        </div>
+
+        <!-- Question Stage -->
+        <div class="question-stage" id="quiz-stage">
+          <div class="q-meta-row">
+            <span class="q-type-tag" id="q-type-tag">形近字辨析</span>
+            <button type="button" class="btn btn-quiet" onclick="speakQuizQuestion()" style="min-height:44px;">
+              <i data-lucide="volume-2" aria-hidden="true"></i>
+              唸出題目
+            </button>
+          </div>
+          <p class="q-prompt" id="q-prompt">題目載入中…</p>
+          <div class="options-grid" id="q-options"></div>
+          <div class="q-feedback-banner" id="q-feedback" role="status">
+            <strong id="q-feedback-title"></strong>
+            <span id="q-feedback-explain"></span>
+          </div>
+        </div>
+
+        <!-- Question Navigation Dots & Next/Prev -->
+        <div class="quiz-nav-row">
+          <div class="q-dots" id="quiz-dots" aria-label="題號跳轉"></div>
+          <div style="display:flex; gap: var(--space-sm); flex-wrap: wrap;">
+            <button type="button" class="btn btn-soft" id="btn-prev-q" onclick="stepQuiz(-1)">上一題</button>
+            <button type="button" class="btn btn-primary" id="btn-next-q" onclick="stepQuiz(1)">下一題</button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Summary -->
+        <div class="quiz-result-panel" id="quiz-result-panel">
+          <div class="result-score-hero">
+            <div>
+              <span class="kicker-label">測驗完成結算</span>
+              <h3 style="margin:0; font-size: var(--headline-size); font-weight: 900;" id="result-headline">太棒了！</h3>
+              <p style="margin: var(--space-xs) 0 0 0; color: var(--on-surface-variant);" id="result-subtitle"></p>
+            </div>
+            <div style="text-align: right;">
+              <span style="display:block; font-size: var(--label-size); font-weight:700; color: var(--on-surface-variant);">本次得分</span>
+              <span class="result-big-num" id="result-score-num">100 分</span>
+            </div>
+          </div>
+          <div class="wrong-review-list" id="wrong-review-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>內容依據：國小康軒版國語一上第三課《一秋千》字音字形整理資料（含形近字與多音字詞例）。</span>
+      <span>建議搭配課本生字筆順與朗讀一起複習。</span>
+    </footer>
+  </main>
+
+  <api-shim></api-shim>
+  <script>
+    /* =====================================================================
+       Data Definitions (All grounded in Kang Hsuan Grade 1 Lesson 3 source)
+       ===================================================================== */
+    const HOMOGRAPH_GROUPS = [
+      {
+        id: `qian-gan`,
+        title: `千 / 干`,
+        ruleHint: `關鍵差異：頂端「一撇」vs「平橫」`,
+        chars: [
+          {
+            char: `千`,
+            zhuyin: `ㄑㄧㄢ`,
+            radical: `十部・3 畫`,
+            diffTip: `最上面是一小「撇」（丿），斜斜的像秋千晃動的繩索。`,
+            highlightType: `qian`,
+            words: [
+              { word: `秋千`, zhuyin: `ㄑㄧㄡ ㄑㄧㄢ` },
+              { word: `千萬`, zhuyin: `ㄑㄧㄢ ㄨㄢˋ` }
+            ]
+          },
+          {
+            char: `干`,
+            zhuyin: `ㄍㄢ`,
+            radical: `干部・3 畫`,
+            diffTip: `最上面是一條平平的「橫」（一），頭頂平平的沒有撇。`,
+            highlightType: `gan`,
+            words: [
+              { word: `干涉`, zhuyin: `ㄍㄢ ㄕㄜˋ` },
+              { word: `相干`, zhuyin: `ㄒㄧㄤ ㄍㄢ` }
+            ]
+          }
+        ],
+        miniCheck: {
+          prompt: `小試身手：公園裡的「秋（　）」盪得好高呀！`,
+          options: [`千`, `干`],
+          answer: `千`,
+          explain: `「秋千」的「千」頂端有一小撇，像秋千繩索喔！`
+        }
+      },
+      {
+        id: `pei-bei`,
+        title: `陪 / 倍`,
+        ruleHint: `關鍵差異：左耳旁「阝」vs 人字旁「亻」`,
+        chars: [
+          {
+            char: `陪`,
+            zhuyin: `ㄆㄟˊ`,
+            radical: `阜部（阝）・11 畫`,
+            diffTip: `左邊是「阝」（左耳旁），表示跟隨、在旁邊做伴。`,
+            highlightType: `pei`,
+            words: [
+              { word: `陪伴`, zhuyin: `ㄆㄟˊ ㄅㄢˋ` },
+              { word: `陪同`, zhuyin: `ㄆㄟˊ ㄊㄨㄥˊ` }
+            ]
+          },
+          {
+            char: `倍`,
+            zhuyin: `ㄅㄟˋ`,
+            radical: `人部（亻）・10 畫`,
+            diffTip: `左邊是「亻」（單人旁），常用在數量增加、幾倍。`,
+            highlightType: `bei`,
+            words: [
+              { word: `倍數`, zhuyin: `ㄅㄟˋ ㄕㄨˋ` },
+              { word: `加倍`, zhuyin: `ㄐㄧㄚ ㄅㄟˋ` }
+            ]
+          }
+        ],
+        miniCheck: {
+          prompt: `小試身手：哥哥在旁邊（　）伴我練習寫字。`,
+          options: [`陪`, `倍`],
+          answer: `陪`,
+          explain: `「陪伴」是左耳旁「阝」的「陪」，「加倍」才是單人旁「亻」的「倍」。`
+        }
+      },
+      {
+        id: `da-tai-quan`,
+        title: `大 / 太 / 犬`,
+        ruleHint: `關鍵差異：沒有點 vs 點在下方 vs 點在右上`,
+        chars: [
+          {
+            char: `大`,
+            zhuyin: `ㄉㄚˋ`,
+            radical: `大部・3 畫`,
+            diffTip: `像一個人張開雙手雙腳，身上乾乾淨淨「沒有點」。`,
+            highlightType: `da`,
+            words: [
+              { word: `大小`, zhuyin: `ㄉㄚˋ ㄒㄧㄠˇ` },
+              { word: `大門`, zhuyin: `ㄉㄚˋ ㄇㄣˊ` }
+            ]
+          },
+          {
+            char: `太`,
+            zhuyin: `ㄊㄞˋ`,
+            radical: `大部・4 畫`,
+            diffTip: `「大」的下方中間多了一「點」，代表太陽高照、非常大。`,
+            highlightType: `tai`,
+            words: [
+              { word: `太陽`, zhuyin: `ㄊㄞˋ ㄧㄤˊ` },
+              { word: `太空`, zhuyin: `ㄊㄞˋ ㄎㄨㄥ` }
+            ]
+          },
+          {
+            char: `犬`,
+            zhuyin: `ㄑㄩㄢˇ`,
+            radical: `犬部・4 畫`,
+            diffTip: `「大」的右上方多了一「點」，像小狗翹起來的耳朵！`,
+            highlightType: `quan`,
+            words: [
+              { word: `獵犬`, zhuyin: `ㄌㄧㄝˋ ㄑㄩㄢˇ` },
+              { word: `狼犬`, zhuyin: `ㄌㄤˊ ㄑㄩㄢˇ` }
+            ]
+          }
+        ],
+        miniCheck: {
+          prompt: `小試身手：那隻跑得很快的獵（　）是警察的好夥伴。`,
+          options: [`大`, `太`, `犬`],
+          answer: `犬`,
+          explain: `「獵犬」是指狗狗，點在右上方的「犬」像小狗的耳朵喔！`
+        }
+      },
+      {
+        id: `hai-mei`,
+        title: `海 / 每`,
+        ruleHint: `關鍵差異：左邊有沒有「氵」三點水`,
+        chars: [
+          {
+            char: `海`,
+            zhuyin: `ㄏㄞˇ`,
+            radical: `水部（氵）・10 畫`,
+            diffTip: `左邊多了「氵」（三點水），因為大海裡有滿滿的海水。`,
+            highlightType: `hai`,
+            words: [
+              { word: `大海`, zhuyin: `ㄉㄚˋ ㄏㄞˇ` },
+              { word: `海洋`, zhuyin: `ㄏㄞˇ ㄧㄤˊ` }
+            ]
+          },
+          {
+            char: `每`,
+            zhuyin: `ㄇㄟˇ`,
+            radical: `毋部・7 畫`,
+            diffTip: `左邊「沒有水」，用來表示各個、每一個（如每天）。`,
+            highlightType: `mei`,
+            words: [
+              { word: `每天`, zhuyin: `ㄇㄟˇ ㄊㄧㄢ` },
+              { word: `每次`, zhuyin: `ㄇㄟˇ ㄘˋ` }
+            ]
+          }
+        ],
+        miniCheck: {
+          prompt: `小試身手：我（　）天早上都會自己刷牙洗臉。`,
+          options: [`海`, `每`],
+          answer: `每`,
+          explain: `「每天」是計算時間的每一個日子，不需要三點水，所以選「每」。`
+        }
+      },
+      {
+        id: `men-men`,
+        title: `們 / 門`,
+        ruleHint: `關鍵差異：左邊有沒有「亻」單人旁`,
+        chars: [
+          {
+            char: `們`,
+            zhuyin: `˙ㄇㄣ`,
+            radical: `人部（亻）・10 畫`,
+            diffTip: `左邊加上「亻」（單人旁），專門用在很多人、代稱一群人。`,
+            highlightType: `men_person`,
+            words: [
+              { word: `我們`, zhuyin: `ㄨㄛˇ ˙ㄇㄣ` },
+              { word: `他們`, zhuyin: `ㄊㄚ ˙ㄇㄣ` }
+            ]
+          },
+          {
+            char: `門`,
+            zhuyin: `ㄇㄣˊ`,
+            radical: `門部・8 畫`,
+            diffTip: `單獨一個「門」字，形狀就像兩扇對開的門板。`,
+            highlightType: `men_door`,
+            words: [
+              { word: `門牙`, zhuyin: `ㄇㄣˊ ㄧㄚˊ` },
+              { word: `門市`, zhuyin: `ㄇㄣˊ ㄕˋ` }
+            ]
+          }
+        ],
+        miniCheck: {
+          prompt: `小試身手：換牙的時候，我前面那顆（　）牙搖搖晃晃的。`,
+          options: [`們`, `門`],
+          answer: `門`,
+          explain: `「門牙」像大門一樣在牙齒最前面，沒有單人旁，所以選「門」。`
+        }
+      }
+    ];
+
+    const HE_READINGS = [
+      {
+        id: `he-2`,
+        zhuyin: `ㄏㄜˊ`,
+        role: `形容詞・平靜、融洽`,
+        meaning: `表示脾氣很好、不生氣，或者大家相處得非常融洽安寧。`,
+        hint: `溫柔有禮貌、世界平靜`,
+        words: [
+          { word: `和平`, zhuyin: `ㄏㄜˊ ㄆㄧㄥˊ` },
+          { word: `和氣`, zhuyin: `ㄏㄜˊ ㄑㄧˋ` }
+        ],
+        sentenceHtml: `老師總是面帶微笑，對大家說話非常<em>和氣</em>（ㄏㄜˊ ㄑㄧˋ）。`,
+        speakSentence: `老師總是面帶微笑，對大家說話非常和氣。`
+      },
+      {
+        id: `he-4`,
+        zhuyin: `ㄏㄜˋ`,
+        role: `動詞・跟著別人唱或說話`,
+        meaning: `別人說話、唱歌或發出聲音時，自己跟著附合、呼應。`,
+        hint: `跟著別人一起喊或唱`,
+        words: [
+          { word: `應和`, zhuyin: `ㄧㄥˋ ㄏㄜˋ` },
+          { word: `附和`, zhuyin: `ㄈㄨˋ ㄏㄜˋ` }
+        ],
+        sentenceHtml: `青蛙在池塘裡大聲唱歌，樹上的小鳥也跟著<em>應和</em>（ㄧㄥˋ ㄏㄜˋ）。`,
+        speakSentence: `青蛙在池塘裡大聲唱歌，樹上的小鳥也跟著應和。`
+      },
+      {
+        id: `han-4`,
+        zhuyin: `ㄏㄢˋ`,
+        role: `連詞・與、跟、同`,
+        meaning: `放在兩個人或兩個東西中間，表示「跟、與」的意思（語音口語常用）。`,
+        hint: `放在兩個人中間，等於「跟」`,
+        words: [
+          { word: `我和你`, zhuyin: `ㄨㄛˇ ㄏㄢˋ ㄋㄧˇ` }
+        ],
+        sentenceHtml: `下課的時候，<em>我和你</em>（ㄨㄛˇ ㄏㄢˋ ㄋㄧˇ）一起去操場盪秋千。`,
+        speakSentence: `下課的時候，我和你一起去操場盪秋千。`
+      },
+      {
+        id: `huo-2`,
+        zhuyin: `ㄏㄨㄛˊ`,
+        role: `動詞・加水揉合粉狀物`,
+        meaning: `把水加到麵粉或泥土裡，用手揉捏攪拌成團。`,
+        hint: `做饅頭、餃子時揉麵粉`,
+        words: [
+          { word: `和麵`, zhuyin: `ㄏㄨㄛˊ ㄇㄧㄢˋ` }
+        ],
+        sentenceHtml: `星期天早上，奶奶在廚房裡一邊<em>和麵</em>（ㄏㄨㄛˊ ㄇㄧㄢˋ），一邊教我做包子。`,
+        speakSentence: `星期天早上，奶奶在廚房裡一邊和麵，一邊教我做包子。`
+      },
+      {
+        id: `huo-0`,
+        zhuyin: `˙ㄏㄨㄛ`,
+        role: `詞尾・輕聲讀音`,
+        meaning: `放在第二個字讀作輕聲，常用來形容天氣舒適或把東西混在一起。`,
+        hint: `念輕聲，天氣溫暖、攪拌均勻`,
+        words: [
+          { word: `暖和`, zhuyin: `ㄋㄨㄢˇ ˙ㄏㄨㄛ` },
+          { word: `攪和`, zhuyin: `ㄐㄧㄠˇ ˙ㄏㄨㄛ` }
+        ],
+        sentenceHtml: `穿上厚厚的外套以後，身體覺得好<em>暖和</em>（ㄋㄨㄢˇ ˙ㄏㄨㄛ）啊！`,
+        speakSentence: `穿上厚厚的外套以後，身體覺得好暖和啊！`
+      }
+    ];
+
+    const DA_READINGS = [
+      {
+        id: `da-4`,
+        zhuyin: `ㄉㄚˋ`,
+        words: `大家、大地`,
+        note: `表示面積廣、數量多或整體`
+      },
+      {
+        id: `dai-4`,
+        zhuyin: `ㄉㄞˋ`,
+        words: `大夫`,
+        note: `指幫人看病的醫生`
+      }
+    ];
+
+    const MEN_READINGS = [
+      {
+        id: `men-0`,
+        zhuyin: `˙ㄇㄣ`,
+        words: `我們、你們`,
+        note: `放在人稱後面表示好幾個人`
+      },
+      {
+        id: `men-2`,
+        zhuyin: `ㄇㄣˊ`,
+        words: `圖們江`,
+        note: `專有名詞，一條河川的地名`
+      }
+    ];
+
+    const MATCHER_BASE_PAIRS = [
+      { id: `m1`, word: `和平`, reading: `ㄏㄜˊ` },
+      { id: `m2`, word: `附和`, reading: `ㄏㄜˋ` },
+      { id: `m3`, word: `我和你`, reading: `ㄏㄢˋ` },
+      { id: `m4`, word: `和麵`, reading: `ㄏㄨㄛˊ` },
+      { id: `m5`, word: `暖和`, reading: `˙ㄏㄨㄛ` },
+      { id: `m6`, word: `大夫`, reading: `ㄉㄞˋ` }
+    ];
+
+    const QUIZ_QUESTIONS = [
+      {
+        id: 1,
+        category: `shape`,
+        typeLabel: `形近字：千 / 干`,
+        prompt: `下課鐘聲一響，同學們開心衝去玩秋（　）。`,
+        options: [`千`, `干`],
+        answer: `千`,
+        explain: `「秋千」的「千」頂端有一撇（丿）；「干」的頂端是平平的一橫，用於「干涉、相干」。`
+      },
+      {
+        id: 2,
+        category: `shape`,
+        typeLabel: `形近字：千 / 干`,
+        prompt: `這件玩具弄壞的事情，和我一點也不相（　）。`,
+        options: [`千`, `干`],
+        answer: `干`,
+        explain: `「相干」是指有關聯，用平頭的「干」；「千」則用於「秋千、千萬」。`
+      },
+      {
+        id: 3,
+        category: `shape`,
+        typeLabel: `形近字：陪 / 倍`,
+        prompt: `晚上睡覺前，爸爸都會（　）伴我一起看故事書。`,
+        options: [`陪`, `倍`],
+        answer: `陪`,
+        explain: `「陪伴」是在身邊作伴，左邊是「阝」（左耳旁），選「陪」。`
+      },
+      {
+        id: 4,
+        category: `shape`,
+        typeLabel: `形近字：陪 / 倍`,
+        prompt: `為了準備運動會，小美比平常加（　）努力練習跑步。`,
+        options: [`陪`, `倍`],
+        answer: `倍`,
+        explain: `「加倍」表示數量或程度增加，左邊是「亻」（單人旁），選「倍」。`
+      },
+      {
+        id: 5,
+        category: `shape`,
+        typeLabel: `形近字：大 / 太 / 犬`,
+        prompt: `早上的（　）陽公公出來了，照得教室亮晶晶。`,
+        options: [`大`, `太`, `犬`],
+        answer: `太`,
+        explain: `「太陽」的「太」是在「大」的下方中間多一點。`
+      },
+      {
+        id: 6,
+        category: `shape`,
+        typeLabel: `形近字：大 / 太 / 犬`,
+        prompt: `農場裡有一隻聰明的獵（　），會幫忙看守羊群。`,
+        options: [`大`, `太`, `犬`],
+        answer: `犬`,
+        explain: `「獵犬」的「犬」在右上方多一點，就像小狗翹起來的耳朵！`
+      },
+      {
+        id: 7,
+        category: `shape`,
+        typeLabel: `形近字：海 / 每`,
+        prompt: `夏天到了，哥哥最喜歡去大（　）邊踩浪花、撿貝殼。`,
+        options: [`海`, `每`],
+        answer: `海`,
+        explain: `大海裡有滿滿的水，所以左邊要有「氵」（三點水），選「海」。`
+      },
+      {
+        id: 8,
+        category: `shape`,
+        typeLabel: `形近字：們 / 門`,
+        prompt: `進入圖書館的時候，請輕輕推開大（　），不要發出聲音。`,
+        options: [`們`, `門`],
+        answer: `門`,
+        explain: `教室或圖書館的大「門」沒有單人旁；稱呼好幾個人（例如我們、他們）才要加「亻」變成「們」。`
+      },
+      {
+        id: 9,
+        category: `sound`,
+        typeLabel: `多音字：和`,
+        prompt: `奶奶準備自己做水餃皮，正在廚房裡用力「和」麵，這裡的「和」怎麼念？`,
+        options: [`ㄏㄜˊ`, `ㄏㄜˋ`, `ㄏㄨㄛˊ`, `˙ㄏㄨㄛ`],
+        answer: `ㄏㄨㄛˊ`,
+        explain: `把水加進麵粉裡攪拌揉捏成團叫做「和麵」，讀作「ㄏㄨㄛˊ」。`
+      },
+      {
+        id: 10,
+        category: `sound`,
+        typeLabel: `多音字：和`,
+        prompt: `冬天曬到溫暖的陽光，讓人覺得全身好暖「和」，這裡的「和」怎麼念？`,
+        options: [`ㄏㄜˊ`, `ㄏㄢˋ`, `ㄏㄨㄛˊ`, `˙ㄏㄨㄛ`],
+        answer: `˙ㄏㄨㄛ`,
+        explain: `「暖和」、「攪和」中的「和」放在詞尾，都要讀作輕聲「˙ㄏㄨㄛ」。`
+      },
+      {
+        id: 11,
+        category: `sound`,
+        typeLabel: `多音字：大`,
+        prompt: `小華發燒不舒服，媽媽趕緊帶他去看「大」夫，這裡的「大」怎麼念？`,
+        options: [`ㄉㄚˋ`, `ㄉㄞˋ`],
+        answer: `ㄉㄞˋ`,
+        explain: `稱呼醫生為「大夫」時，「大」要讀作「ㄉㄞˋ」；「大家、大地」才讀作「ㄉㄚˋ」。`
+      },
+      {
+        id: 12,
+        category: `sound`,
+        typeLabel: `多音字：們`,
+        prompt: `「我『們』一起去玩吧！」和「圖『們』江」裡的「們」，分別怎麼念？`,
+        options: [`˙ㄇㄣ ／ ㄇㄣˊ`, `ㄇㄣˊ ／ ˙ㄇㄣ`, `兩個都念 ˙ㄇㄣ`, `兩個都念 ㄇㄣˊ`],
+        answer: `˙ㄇㄣ ／ ㄇㄣˊ`,
+        explain: `「我們、你們」讀輕聲「˙ㄇㄣ」；只有用在河川地名「圖們江」時，讀二聲「ㄇㄣˊ」。`
+      }
+    ];
+
+    /* =====================================================================
+       Application State
+       ===================================================================== */
+    let appState = {
+      activeGroupIdx: 0,
+      activeHeIdx: 0,
+      exploredGroups: [],
+      exploredReadings: [],
+      quizFilter: `all`,
+      currentQuizPos: 0,
+      quizAnswers: {},
+      bestScore: null
+    };
+
+    let matcherState = {
+      selectedWordId: null,
+      matchedIds: [],
+      wordOrder: [],
+      readingOrder: []
+    };
+
+    /* =====================================================================
+       Speech Synthesis Helper (Graceful Offline/Sandbox Support)
+       ===================================================================== */
+    function speakText(text) {
+      const hint = document.getElementById(`speech-status-hint`);
+      try {
+        if (!(`speechSynthesis` in window)) {
+          if (hint) hint.textContent = `目前瀏覽器不支援語音朗讀，請跟著注音唸唸看！`;
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = `zh-TW`;
+        utter.rate = 0.88;
+        window.speechSynthesis.speak(utter);
+        if (hint) hint.textContent = `正在示範朗讀：「${text}」`;
+      } catch (err) {
+        if (hint) hint.textContent = `請跟著畫面上的注音唸唸看：「${text}」`;
+      }
+    }
+
+    /* =====================================================================
+       Custom SVG Stroke/Part Diagrams (Clear visual cues for Grade 1 kids)
+       ===================================================================== */
+    function buildCharDiagramSvg(charObj) {
+      const ch = charObj.char;
+      const type = charObj.highlightType;
+      let cueMarkup = ``;
+
+      /* Pink highlight markers pointing out the distinguishing part */
+      if (type === `qian`) {
+        cueMarkup = `<path d="M58 14 L30 24" stroke="var(--primary)" stroke-width="5" stroke-linecap="round"/>
+                     <circle cx="44" cy="19" r="14" fill="none" stroke="var(--primary)" stroke-width="2" stroke-dasharray="3 3"/>`;
+      } else if (type === `gan`) {
+        cueMarkup = `<path d="M22 21 L62 21" stroke="var(--tertiary)" stroke-width="5" stroke-linecap="round"/>`;
+      } else if (type === `pei`) {
+        cueMarkup = `<rect x="14" y="16" width="22" height="54" rx="8" fill="var(--tint-pink)" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4 3"/>`;
+      } else if (type === `bei`) {
+        cueMarkup = `<rect x="14" y="16" width="22" height="54" rx="8" fill="var(--tint-sky)" stroke="var(--tertiary)" stroke-width="2" stroke-dasharray="4 3"/>`;
+      } else if (type === `da`) {
+        cueMarkup = `<circle cx="42" cy="42" r="28" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-dasharray="4 4"/>`;
+      } else if (type === `tai`) {
+        cueMarkup = `<circle cx="42" cy="63" r="10" fill="var(--tint-pink)" stroke="var(--primary)" stroke-width="2.5"/>`;
+      } else if (type === `quan`) {
+        cueMarkup = `<circle cx="58" cy="24" r="10" fill="var(--tint-pink)" stroke="var(--primary)" stroke-width="2.5"/>`;
+      } else if (type === `hai`) {
+        cueMarkup = `<rect x="14" y="18" width="18" height="50" rx="8" fill="var(--tint-sky)" stroke="var(--tertiary)" stroke-width="2.5"/>`;
+      } else if (type === `mei`) {
+        cueMarkup = `<rect x="18" y="14" width="48" height="56" rx="10" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-dasharray="4 3"/>`;
+      } else if (type === `men_person`) {
+        cueMarkup = `<rect x="13" y="16" width="20" height="54" rx="8" fill="var(--tint-pink)" stroke="var(--primary)" stroke-width="2.5"/>`;
+      } else if (type === `men_door`) {
+        cueMarkup = `<rect x="18" y="16" width="48" height="54" rx="8" fill="none" stroke="var(--tertiary)" stroke-width="2" stroke-dasharray="4 3"/>`;
+      }
+
+      return `
+        <svg class="hanzi-svg" viewBox="0 0 84 84" aria-hidden="true">
+          <line x1="42" y1="4" x2="42" y2="80" stroke="var(--outline-variant)" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="4" y1="42" x2="80" y2="42" stroke="var(--outline-variant)" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <text x="42" y="59" text-anchor="middle" font-family="var(--font-headline)" font-weight="900" font-size="50" fill="var(--on-surface)">${ch}</text>
+          ${cueMarkup}
+        </svg>
+      `;
+    }
+
+    /* =====================================================================
+       Persistence Helpers (window.notebookAppApi)
+       ===================================================================== */
+    async function saveState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState({
+            activeGroupIdx: appState.activeGroupIdx,
+            activeHeIdx: appState.activeHeIdx,
+            exploredGroups: appState.exploredGroups,
+            exploredReadings: appState.exploredReadings,
+            quizFilter: appState.quizFilter,
+            currentQuizPos: appState.currentQuizPos,
+            quizAnswers: appState.quizAnswers,
+            bestScore: appState.bestScore
+          });
+        }
+      } catch (e) {
+        /* Fail silently if host shim unavailable */
+      }
+    }
+
+    function markGroupExplored(groupId) {
+      if (!appState.exploredGroups.includes(groupId)) {
+        appState.exploredGroups.push(groupId);
+      }
+    }
+
+    function markReadingExplored(readingId) {
+      if (!appState.exploredReadings.includes(readingId)) {
+        appState.exploredReadings.push(readingId);
+      }
+    }
+
+    /* =====================================================================
+       Section 1 Render: 形近字辨析
+       ===================================================================== */
+    function selectHomographGroup(idx) {
+      if (idx < 0 || idx >= HOMOGRAPH_GROUPS.length) return;
+      appState.activeGroupIdx = idx;
+      markGroupExplored(HOMOGRAPH_GROUPS[idx].id);
+      renderHomographs();
+      renderProgressStats();
+      saveState();
+    }
+
+    function checkMiniQuestion(choice) {
+      const group = HOMOGRAPH_GROUPS[appState.activeGroupIdx];
+      if (!group) return;
+      const fb = document.getElementById(`mini-check-feedback`);
+      if (!fb) return;
+      fb.classList.add(`is-shown`);
+      if (choice === group.miniCheck.answer) {
+        fb.className = `mini-feedback is-shown is-ok`;
+        fb.textContent = `答對了！${group.miniCheck.explain}`;
+      } else {
+        fb.className = `mini-feedback is-shown is-bad`;
+        fb.textContent = `再想一下喔！${group.miniCheck.explain}`;
+      }
+    }
+
+    function renderHomographs() {
+      const tabsEl = document.getElementById(`homograph-tabs`);
+      const spotTitle = document.getElementById(`spot-title`);
+      const spotRule = document.getElementById(`spot-rule-pill`);
+      const spotCards = document.getElementById(`spot-char-cards`);
+      const miniPrompt = document.getElementById(`mini-check-prompt`);
+      const miniOpts = document.getElementById(`mini-check-options`);
+      const miniFb = document.getElementById(`mini-check-feedback`);
+      const overviewEl = document.getElementById(`all-groups-overview`);
+
+      if (!tabsEl || !spotCards || !overviewEl) return;
+
+      /* Render selector tabs */
+      tabsEl.innerHTML = HOMOGRAPH_GROUPS.map((g, i) => {
+        const activeClass = i === appState.activeGroupIdx ? `is-active` : ``;
+        const doneDot = appState.exploredGroups.includes(g.id)
+          ? `<span class="chip-done-dot" title="已複習"></span>`
+          : ``;
+        return `<button type="button" class="group-chip ${activeClass}" onclick="selectHomographGroup(${i})">
+          ${doneDot}
+          <span>第 ${i + 1} 組：${g.title}</span>
+        </button>`;
+      }).join(``);
+
+      /* Render spotlight group */
+      const group = HOMOGRAPH_GROUPS[appState.activeGroupIdx];
+      if (spotTitle) spotTitle.textContent = `第 ${appState.activeGroupIdx + 1} 組：${group.title}`;
+      if (spotRule) spotRule.textContent = group.ruleHint;
+
+      spotCards.innerHTML = group.chars.map((c) => {
+        const wordsHtml = c.words.map((w) => {
+          return `<button type="button" class="word-btn" onclick="speakText('${w.word}')">
+            <span>${w.word}</span>
+            <span class="word-zhuyin">${w.zhuyin}</span>
+          </button>`;
+        }).join(``);
+
+        return `
+          <article class="char-card">
+            <div class="char-visual-row">
+              <div class="hanzi-tile">${buildCharDiagramSvg(c)}</div>
+              <div class="char-meta">
+                <div class="char-title-line">
+                  <span class="char-big-txt">${c.char}</span>
+                  <span class="zhuyin-tag">${c.zhuyin}</span>
+                </div>
+                <span class="radical-tag">${c.radical}</span>
+                <button type="button" class="btn btn-quiet" onclick="speakText('${c.char}')" style="padding: 2px var(--space-sm); min-height: 44px; justify-content: flex-start;">
+                  唸這個字
+                </button>
+              </div>
+            </div>
+            <div class="diff-callout">
+              <strong>字形小訣竅：</strong>${c.diffTip}
+            </div>
+            <div>
+              <span style="display:block; font-size: var(--label-size); font-weight:700; color: var(--on-surface-variant); margin-bottom: var(--space-xs);">課本語詞（點擊聽發音）：</span>
+              <div class="word-chips">${wordsHtml}</div>
+            </div>
+          </article>
+        `;
+      }).join(``);
+
+      /* Render mini check */
+      if (miniPrompt) miniPrompt.textContent = group.miniCheck.prompt;
+      if (miniOpts) {
+        miniOpts.innerHTML = group.miniCheck.options.map((opt) => {
+          return `<button type="button" class="btn btn-soft" onclick="checkMiniQuestion('${opt}')">${opt}</button>`;
+        }).join(``);
+      }
+      if (miniFb) {
+        miniFb.className = `mini-feedback`;
+        miniFb.textContent = ``;
+      }
+
+      /* Render overview grid */
+      overviewEl.innerHTML = HOMOGRAPH_GROUPS.map((g, i) => {
+        const selectedClass = i === appState.activeGroupIdx ? `is-selected` : ``;
+        const previewWords = g.chars.map((c) => c.words[0].word).join(`、`);
+        return `
+          <button type="button" class="summary-mini-card ${selectedClass}" onclick="selectHomographGroup(${i})">
+            <span class="summary-chars">${g.title}</span>
+            <span class="summary-words">例詞：${previewWords}</span>
+          </button>
+        `;
+      }).join(``);
+    }
+
+    /* =====================================================================
+       Section 2 Render: 多音字百寶箱 (和、大、們)
+       ===================================================================== */
+    function selectHeReading(idx) {
+      if (idx < 0 || idx >= HE_READINGS.length) return;
+      appState.activeHeIdx = idx;
+      markReadingExplored(HE_READINGS[idx].id);
+      renderPolyphones();
+      renderProgressStats();
+      saveState();
+    }
+
+    function speakCurrentHe() {
+      const r = HE_READINGS[appState.activeHeIdx];
+      if (r) speakText(r.speakSentence);
+    }
+
+    function visitSideReading(id, textToSpeak) {
+      markReadingExplored(id);
+      speakText(textToSpeak);
+      renderPolyphones();
+      renderProgressStats();
+      saveState();
+    }
+
+    function renderPolyphones() {
+      const pillsEl = document.getElementById(`he-reading-pills`);
+      const zhuyinEl = document.getElementById(`he-zhuyin`);
+      const roleEl = document.getElementById(`he-role`);
+      const meaningEl = document.getElementById(`he-meaning`);
+      const wordsEl = document.getElementById(`he-words`);
+      const sentenceEl = document.getElementById(`he-sentence`);
+      const tbodyEl = document.getElementById(`he-table-body`);
+      const daListEl = document.getElementById(`da-pair-list`);
+      const menListEl = document.getElementById(`men-pair-list`);
+
+      if (!pillsEl || !tbodyEl) return;
+
+      pillsEl.innerHTML = HE_READINGS.map((r, i) => {
+        const activeClass = i === appState.activeHeIdx ? `is-active` : ``;
+        return `<button type="button" class="reading-pill ${activeClass}" onclick="selectHeReading(${i})">${r.zhuyin}</button>`;
+      }).join(``);
+
+      const current = HE_READINGS[appState.activeHeIdx];
+      if (zhuyinEl) zhuyinEl.textContent = current.zhuyin;
+      if (roleEl) roleEl.textContent = current.role;
+      if (meaningEl) meaningEl.textContent = current.meaning;
+      if (wordsEl) {
+        wordsEl.innerHTML = current.words.map((w) => {
+          return `<button type="button" class="word-btn" onclick="speakText('${w.word}')">
+            <span>${w.word}</span>
+            <span class="word-zhuyin">${w.zhuyin}</span>
+          </button>`;
+        }).join(``);
+      }
+      if (sentenceEl) {
+        sentenceEl.innerHTML = `<strong>造句示範：</strong>${current.sentenceHtml}`;
+      }
+
+      tbodyEl.innerHTML = HE_READINGS.map((r, i) => {
+        const hiClass = i === appState.activeHeIdx ? `is-highlighted` : ``;
+        const wordStr = r.words.map((w) => w.word).join(`、`);
+        return `<tr class="${hiClass}" onclick="selectHeReading(${i})" style="cursor:pointer;">
+          <td><strong>${r.zhuyin}</strong></td>
+          <td>${wordStr}</td>
+          <td>${r.hint}</td>
+        </tr>`;
+      }).join(``);
+
+      if (daListEl) {
+        daListEl.innerHTML = DA_READINGS.map((item) => {
+          const visited = appState.exploredReadings.includes(item.id) ? `is-visited` : ``;
+          return `<button type="button" class="poly-pair-item ${visited}" onclick="visitSideReading('${item.id}', '${item.words}')">
+            <div>
+              <strong style="color: var(--primary); font-size: 1.05rem;">${item.zhuyin}</strong>
+              <span style="margin-left: var(--space-sm); font-weight: 800; color: var(--on-surface);">${item.words}</span>
+              <span style="display:block; font-size: var(--label-size); color: var(--on-surface-variant);">${item.note}</span>
+            </div>
+            <span class="pill-badge pill-badge-grape">聽讀音</span>
+          </button>`;
+        }).join(``);
+      }
+
+      if (menListEl) {
+        menListEl.innerHTML = MEN_READINGS.map((item) => {
+          const visited = appState.exploredReadings.includes(item.id) ? `is-visited` : ``;
+          return `<button type="button" class="poly-pair-item ${visited}" onclick="visitSideReading('${item.id}', '${item.words}')">
+            <div>
+              <strong style="color: var(--primary); font-size: 1.05rem;">${item.zhuyin}</strong>
+              <span style="margin-left: var(--space-sm); font-weight: 800; color: var(--on-surface);">${item.words}</span>
+              <span style="display:block; font-size: var(--label-size); color: var(--on-surface-variant);">${item.note}</span>
+            </div>
+            <span class="pill-badge pill-badge-grape">聽讀音</span>
+          </button>`;
+        }).join(``);
+      }
+    }
+
+    /* =====================================================================
+       Interactive Matcher Game
+       ===================================================================== */
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+      }
+      return copy;
+    }
+
+    function resetMatcher() {
+      matcherState.selectedWordId = null;
+      matcherState.matchedIds = [];
+      matcherState.wordOrder = shuffleArray(MATCHER_BASE_PAIRS);
+      matcherState.readingOrder = shuffleArray(MATCHER_BASE_PAIRS);
+      const statusEl = document.getElementById(`matcher-status`);
+      if (statusEl) statusEl.textContent = `已重新洗牌！請先點選左邊的語詞。`;
+      renderMatcher();
+    }
+
+    function selectMatcherWord(id) {
+      if (matcherState.matchedIds.includes(id)) return;
+      matcherState.selectedWordId = id;
+      const item = MATCHER_BASE_PAIRS.find((p) => p.id === id);
+      const statusEl = document.getElementById(`matcher-status`);
+      if (statusEl && item) {
+        statusEl.textContent = `已選取「${item.word}」，請點選右邊正確的讀音！`;
+      }
+      renderMatcher();
+    }
+
+    function selectMatcherReading(id) {
+      if (matcherState.matchedIds.includes(id)) return;
+      const statusEl = document.getElementById(`matcher-status`);
+      if (!matcherState.selectedWordId) {
+        if (statusEl) statusEl.textContent = `請先從左邊選一個語詞喔！`;
+        return;
+      }
+      if (matcherState.selectedWordId === id) {
+        matcherState.matchedIds.push(id);
+        const item = MATCHER_BASE_PAIRS.find((p) => p.id === id);
+        matcherState.selectedWordId = null;
+        if (statusEl && item) {
+          if (matcherState.matchedIds.length === MATCHER_BASE_PAIRS.length) {
+            statusEl.textContent = `太厲害了！6 組多音字語詞全部配對完成！`;
+          } else {
+            statusEl.textContent = `配對成功！「${item.word}」的讀音就是 ${item.reading}！`;
+          }
+        }
+        renderMatcher();
+      } else {
+        const chosenWord = MATCHER_BASE_PAIRS.find((p) => p.id === matcherState.selectedWordId);
+        if (statusEl && chosenWord) {
+          statusEl.textContent = `「${chosenWord.word}」不是這個讀音喔，再找找看！`;
+        }
+        const wrongBtn = document.querySelector(`[data-reading-id="${id}"]`);
+        if (wrongBtn) {
+          wrongBtn.classList.add(`is-wrong`);
+          setTimeout(() => {
+            wrongBtn.classList.remove(`is-wrong`);
+          }, 420);
+        }
+      }
+    }
+
+    function renderMatcher() {
+      const wordsEl = document.getElementById(`matcher-words`);
+      const readingsEl = document.getElementById(`matcher-readings`);
+      if (!wordsEl || !readingsEl) return;
+
+      wordsEl.innerHTML = matcherState.wordOrder.map((p) => {
+        const isMatched = matcherState.matchedIds.includes(p.id);
+        const isSelected = matcherState.selectedWordId === p.id;
+        const cls = isMatched ? `is-matched` : (isSelected ? `is-selected` : ``);
+        const badge = isMatched ? `完成` : `語詞`;
+        return `<button type="button" class="match-tile ${cls}" ${isMatched ? `disabled` : ``} onclick="selectMatcherWord('${p.id}')">
+          <span>${p.word}</span>
+          <span style="font-size: var(--label-size); opacity: 0.85;">${badge}</span>
+        </button>`;
+      }).join(``);
+
+      readingsEl.innerHTML = matcherState.readingOrder.map((p) => {
+        const isMatched = matcherState.matchedIds.includes(p.id);
+        const cls = isMatched ? `is-matched` : ``;
+        return `<button type="button" class="match-tile ${cls}" data-reading-id="${p.id}" ${isMatched ? `disabled` : ``} onclick="selectMatcherReading('${p.id}')">
+          <span>${p.reading}</span>
+          <span style="font-size: var(--label-size); opacity: 0.85;">${isMatched ? p.word : `讀音`}</span>
+        </button>`;
+      }).join(``);
+    }
+
+    /* =====================================================================
+       Section 3: Classroom Quiz
+       ===================================================================== */
+    function getFilteredQuestions() {
+      if (appState.quizFilter === `all`) return QUIZ_QUESTIONS;
+      return QUIZ_QUESTIONS.filter((q) => q.category === appState.quizFilter);
+    }
+
+    function setQuizFilter(filter) {
+      appState.quizFilter = filter;
+      appState.currentQuizPos = 0;
+      renderQuiz();
+      saveState();
+    }
+
+    function jumpToQuizPos(pos) {
+      const list = getFilteredQuestions();
+      if (pos < 0 || pos >= list.length) return;
+      appState.currentQuizPos = pos;
+      renderQuiz();
+      saveState();
+    }
+
+    function stepQuiz(delta) {
+      const list = getFilteredQuestions();
+      const nextPos = appState.currentQuizPos + delta;
+      if (nextPos >= 0 && nextPos < list.length) {
+        appState.currentQuizPos = nextPos;
+        renderQuiz();
+        saveState();
+      }
+    }
+
+    function answerQuizQuestion(optionStr) {
+      const list = getFilteredQuestions();
+      const q = list[appState.currentQuizPos];
+      if (!q) return;
+      if (appState.quizAnswers[q.id] !== undefined) return;
+      appState.quizAnswers[q.id] = optionStr;
+
+      /* Update best score when all 12 questions are answered */
+      const answeredCount = QUIZ_QUESTIONS.filter((item) => appState.quizAnswers[item.id] !== undefined).length;
+      if (answeredCount === QUIZ_QUESTIONS.length) {
+        const correctAll = QUIZ_QUESTIONS.filter((item) => appState.quizAnswers[item.id] === item.answer).length;
+        const pct = Math.round((correctAll / QUIZ_QUESTIONS.length) * 100);
+        if (appState.bestScore === null || pct > appState.bestScore) {
+          appState.bestScore = pct;
+        }
+      }
+
+      renderQuiz();
+      renderProgressStats();
+      saveState();
+    }
+
+    function speakQuizQuestion() {
+      const list = getFilteredQuestions();
+      const q = list[appState.currentQuizPos];
+      if (!q) return;
+      const cleanPrompt = q.prompt.replace(`（　）`, `空格`);
+      speakText(cleanPrompt);
+    }
+
+    function handleResetQuiz(btn) {
+      const labelEl = document.getElementById(`reset-quiz-label`);
+      if (btn && btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        if (labelEl) labelEl.textContent = `再點一次確認重做`;
+        setTimeout(() => {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            if (labelEl) labelEl.textContent = `重做本輪測驗`;
+          }
+        }, 3200);
+        return;
+      }
+      if (btn) {
+        btn.dataset.armed = `false`;
+        if (labelEl) labelEl.textContent = `重做本輪測驗`;
+      }
+      const list = getFilteredQuestions();
+      list.forEach((q) => {
+        delete appState.quizAnswers[q.id];
+      });
+      appState.currentQuizPos = 0;
+      renderQuiz();
+      saveState();
+    }
+
+    function renderQuiz() {
+      const list = getFilteredQuestions();
+      if (appState.currentQuizPos >= list.length) appState.currentQuizPos = 0;
+      const q = list[appState.currentQuizPos];
+
+      /* Update filter button states */
+      const btnAll = document.getElementById(`filter-all`);
+      const btnShape = document.getElementById(`filter-shape`);
+      const btnSound = document.getElementById(`filter-sound`);
+      if (btnAll) btnAll.classList.toggle(`is-active`, appState.quizFilter === `all`);
+      if (btnShape) btnShape.classList.toggle(`is-active`, appState.quizFilter === `shape`);
+      if (btnSound) btnSound.classList.toggle(`is-active`, appState.quizFilter === `sound`);
+
+      /* Progress & Score */
+      const answeredInSet = list.filter((item) => appState.quizAnswers[item.id] !== undefined).length;
+      const correctInSet = list.filter((item) => appState.quizAnswers[item.id] === item.answer).length;
+      const progText = document.getElementById(`quiz-progress-text`);
+      const liveScore = document.getElementById(`quiz-score-live`);
+      const progFill = document.getElementById(`quiz-progress-fill`);
+
+      if (progText) progText.textContent = `第 ${appState.currentQuizPos + 1} 題 / 共 ${list.length} 題（已作答 ${answeredInSet} 題）`;
+      if (liveScore) liveScore.textContent = `目前答對：${correctInSet} 題`;
+      if (progFill) {
+        const pct = Math.round((answeredInSet / list.length) * 100);
+        progFill.style.width = `${pct}%`;
+      }
+
+      /* Render current question */
+      const tagEl = document.getElementById(`q-type-tag`);
+      const promptEl = document.getElementById(`q-prompt`);
+      const optsEl = document.getElementById(`q-options`);
+      const fbEl = document.getElementById(`q-feedback`);
+      const fbTitle = document.getElementById(`q-feedback-title`);
+      const fbExplain = document.getElementById(`q-feedback-explain`);
+
+      if (!q || !promptEl || !optsEl) return;
+
+      const userChoice = appState.quizAnswers[q.id];
+      const isAnswered = userChoice !== undefined;
+
+      if (tagEl) tagEl.textContent = q.typeLabel;
+      const filledBlank = isAnswered
+        ? `<span class="q-blank">${userChoice}</span>`
+        : `<span class="q-blank">？</span>`;
+      promptEl.innerHTML = q.prompt.replace(`（　）`, filledBlank);
+
+      optsEl.innerHTML = q.options.map((opt) => {
+        let cls = ``;
+        if (isAnswered) {
+          if (opt === q.answer) cls = `is-correct`;
+          else if (opt === userChoice) cls = `is-wrong`;
+        }
+        return `<button type="button" class="option-btn ${cls}" ${isAnswered ? `disabled` : ``} onclick="answerQuizQuestion('${opt}')">
+          <span>${opt}</span>
+        </button>`;
+      }).join(``);
+
+      if (fbEl && fbTitle && fbExplain) {
+        if (isAnswered) {
+          const isOk = userChoice === q.answer;
+          fbEl.className = `q-feedback-banner is-shown ${isOk ? `is-ok` : `is-bad`}`;
+          fbTitle.textContent = isOk ? `答對了！表現真棒！` : `這題再記一下喔，正確答案是「${q.answer}」`;
+          fbExplain.textContent = q.explain;
+        } else {
+          fbEl.className = `q-feedback-banner`;
+        }
+      }
+
+      /* Render Dots */
+      const dotsEl = document.getElementById(`quiz-dots`);
+      if (dotsEl) {
+        dotsEl.innerHTML = list.map((item, idx) => {
+          const ans = appState.quizAnswers[item.id];
+          let cls = idx === appState.currentQuizPos ? `is-current ` : ``;
+          if (ans !== undefined) {
+            cls += ans === item.answer ? `is-ok` : `is-bad`;
+          }
+          return `<button type="button" class="q-dot ${cls}" onclick="jumpToQuizPos(${idx})" aria-label="第 ${idx + 1} 題">${idx + 1}</button>`;
+        }).join(``);
+      }
+
+      /* Prev/Next buttons */
+      const prevBtn = document.getElementById(`btn-prev-q`);
+      const nextBtn = document.getElementById(`btn-next-q`);
+      if (prevBtn) prevBtn.disabled = appState.currentQuizPos === 0;
+      if (nextBtn) nextBtn.disabled = appState.currentQuizPos === list.length - 1;
+
+      /* Show result summary if all questions in current set are answered */
+      const resultPanel = document.getElementById(`quiz-result-panel`);
+      const resHeadline = document.getElementById(`result-headline`);
+      const resSubtitle = document.getElementById(`result-subtitle`);
+      const resScoreNum = document.getElementById(`result-score-num`);
+      const wrongListEl = document.getElementById(`wrong-review-list`);
+
+      if (resultPanel && answeredInSet === list.length) {
+        const finalPct = Math.round((correctInSet / list.length) * 100);
+        resultPanel.classList.add(`is-shown`);
+        if (resScoreNum) resScoreNum.textContent = `${finalPct} 分`;
+        if (resHeadline) {
+          resHeadline.textContent = finalPct === 100 ? `滿分過關！你已經完全掌握第三課了！` : (finalPct >= 80 ? `好棒！觀念非常清楚喔！` : `繼續加油！看看下面的錯題小筆記：`);
+        }
+        if (resSubtitle) {
+          resSubtitle.textContent = `本輪共 ${list.length} 題，答對 ${correctInSet} 題。`;
+        }
+        const wrongItems = list.filter((item) => appState.quizAnswers[item.id] !== item.answer);
+        if (wrongListEl) {
+          if (wrongItems.length === 0) {
+            wrongListEl.innerHTML = `<div class="wrong-review-item" style="color: var(--positive); font-weight: 700;">本輪全部答對，沒有任何錯題！</div>`;
+          } else {
+            wrongListEl.innerHTML = wrongItems.map((w) => {
+              return `<div class="wrong-review-item">
+                <strong>${w.typeLabel}：</strong>${w.prompt}
+                <div style="margin-top: var(--space-xs); color: var(--primary); font-weight: 700;">正確答案：${w.answer}（你的作答：${appState.quizAnswers[w.id]}）</div>
+                <div style="margin-top: var(--space-xs); font-size: 0.92rem; color: var(--on-surface-variant);">${w.explain}</div>
+              </div>`;
+            }).join(``);
+          }
+        }
+      } else if (resultPanel) {
+        resultPanel.classList.remove(`is-shown`);
+      }
+    }
+
+    /* =====================================================================
+       Progress Stats & Global Reset
+       ===================================================================== */
+    function renderProgressStats() {
+      const homoEl = document.getElementById(`stat-homographs`);
+      const polyEl = document.getElementById(`stat-polyphones`);
+      const bestEl = document.getElementById(`stat-best-score`);
+      const pctLabel = document.getElementById(`overall-progress-label`);
+      const progBar = document.getElementById(`overall-progressbar`);
+      const progFill = document.getElementById(`overall-progress-fill`);
+
+      const homoCount = appState.exploredGroups.length;
+      const polyCount = appState.exploredReadings.length;
+      const totalSteps = 5 + 9;
+      const pct = Math.min(100, Math.round(((homoCount + polyCount) / totalSteps) * 100));
+
+      if (homoEl) homoEl.textContent = `${homoCount} / 5`;
+      if (polyEl) polyEl.textContent = `${polyCount} / 9`;
+      if (bestEl) bestEl.textContent = appState.bestScore !== null ? `${appState.bestScore} 分` : `--`;
+      if (pctLabel) pctLabel.textContent = `${pct}%`;
+      if (progBar) progBar.setAttribute(`aria-valuenow`, String(pct));
+      if (progFill) progFill.style.width = `${pct}%`;
+    }
+
+    function handleResetProgress(btn) {
+      if (btn && btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `再點一次清除紀錄`;
+        setTimeout(() => {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            btn.textContent = `清除學習紀錄`;
+          }
+        }, 3200);
+        return;
+      }
+      if (btn) {
+        btn.dataset.armed = `false`;
+        btn.textContent = `清除學習紀錄`;
+      }
+      appState = {
+        activeGroupIdx: 0,
+        activeHeIdx: 0,
+        exploredGroups: [],
+        exploredReadings: [],
+        quizFilter: `all`,
+        currentQuizPos: 0,
+        quizAnswers: {},
+        bestScore: null
+      };
+      renderHomographs();
+      renderPolyphones();
+      resetMatcher();
+      renderQuiz();
+      renderProgressStats();
+      saveState();
+    }
+
+    /* =====================================================================
+       Initialization
+       ===================================================================== */
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            if (typeof saved.activeGroupIdx === `number`) appState.activeGroupIdx = saved.activeGroupIdx;
+            if (typeof saved.activeHeIdx === `number`) appState.activeHeIdx = saved.activeHeIdx;
+            if (Array.isArray(saved.exploredGroups)) appState.exploredGroups = saved.exploredGroups;
+            if (Array.isArray(saved.exploredReadings)) appState.exploredReadings = saved.exploredReadings;
+            if (typeof saved.quizFilter === `string`) appState.quizFilter = saved.quizFilter;
+            if (typeof saved.currentQuizPos === `number`) appState.currentQuizPos = saved.currentQuizPos;
+            if (saved.quizAnswers && typeof saved.quizAnswers === `object`) appState.quizAnswers = saved.quizAnswers;
+            if (typeof saved.bestScore === `number`) appState.bestScore = saved.bestScore;
+          }
+        }
+      } catch (e) {
+        /* Proceed with fresh initial state */
+      }
+
+      /* Mark the initially viewed items as explored on first visit if empty */
+      if (appState.exploredGroups.length === 0) {
+        markGroupExplored(HOMOGRAPH_GROUPS[appState.activeGroupIdx].id);
+      }
+      if (appState.exploredReadings.length === 0) {
+        markReadingExplored(HE_READINGS[appState.activeHeIdx].id);
+      }
+
+      renderHomographs();
+      renderPolyphones();
+      resetMatcher();
+      renderQuiz();
+      renderProgressStats();
+
+      if (window.lucide && typeof window.lucide.createIcons === `function`) {
+        window.lucide.createIcons();
+      }
+
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+          window.notebookAppApi.notifyAppReady();
+        }
+      } catch (e) {
+        /* Ignore if outside host */
+      }
+    }
+
+    initApp();
+  </script>
+</body>
+</html>
